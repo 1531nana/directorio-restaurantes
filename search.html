@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <title></title>
     <meta charset="UTF-8" />
@@ -9,58 +9,81 @@
   </head>
   <body class="bg-gray-100 font-sans">
     <!-- Navbar -->
-     <nav class="bg-gray-900 text-white p-4">
+    <nav class="bg-purple-900 text-white p-4">
       <div class="container mx-auto flex justify-between items-center">
-        <h1 class="text-2xl font-bold">directorio de restaurantes</h1>
+        <h1 class="text-2xl font-bold">Directorio de Restaurantes</h1>
         <div class="space-x-4">
-          <a href="" class="hover:text-blue-300">home</a>
-          <a href="" class="hover:text-blue-300">search</a>
-          <a href="" class="hover:text-blue-300">new</a>
+          <a href="home.html" class="hover:text-blue-300">Home</a>
+          <a href="search.html" class="hover:text-blue-300">Search</a>
+          <a href="new.html" class="hover:text-blue-300">New</a>
         </div>
       </div>
-     </nav>
+    </nav>
 
-<div class="container mx-auto p-4">
-  <h2 class="text-3xl font-bold text-center mb-6">buscar restaurantes</h2>
-  <div class="flex justify-center mb-6">
-    <input type="text" id="searchinput" placeholder="buscar por nombre..." class="w-full md:w-1/2 P-3 border
-    border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-  </div>
-  <div id="results" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols3 gap-6"></div>
-</div>
+    <div class="container mx-auto p-4">
+      <h2 class="text-3xl font-bold text-center mb-6">Buscar Restaurantes</h2>
+      <div class="flex justify-center mb-6">
+        <input
+          type="text"
+          id="searchinput"
+          placeholder="Buscar por nombre..."
+          class="w-full md:w-1/2 P-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+      <div
+        id="results"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols3 gap-6"
+      ></div>
+    </div>
 
-<script>
-  const restaurants = [
-    { name: "restaurante 1", description: "restaurante 1", address: "calle nueva 123", image: ""},
+    <script>
+      const restaurants = [
+        {
+          name: "Nobile Cucina",
+          description:
+            "Embárcate en un viaje culinario al corazón de Italia sin salir de la ciudad. Disfruta de nuestros sabores auténticos, desde pastas frescas hechas en casa hasta recetas tradicionales transmitidas por generaciones. Vive una experiencia acogedora y llena de pasión en cada plato, acompañada de una selecta carta de vinos.",
+          address: "Calle Falsa 1260",
+          image:
+            "https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg",
+        },
+        {
+          name: "Ancestral: Sabor de Origen",
+          description:
+            "Siente el abrazo de la tradición colombiana en cada bocado que servimos. Te ofrecemos lo mejor de la comida criolla, preparada con ingredientes locales frescos y el auténtico sazón casero de la abuela. Ven y comparte en un ambiente cálido y familiar el verdadero sabor de nuestro país.",
+          address: "Calle de la Buena Mesa",
+          image:
+            "https://w0.peakpx.com/wallpaper/1019/191/HD-wallpaper-restaurant-and-bar-with-gorgeous-view-city-restaurant-view-bar-thumbnail.jpg",
+        },
+        {
+          name: "Fleur de Lys",
+          description:
+            "Descubre la elegancia y sofisticación de la alta cocina francesa en nuestro rincón parisino. Deléitate con platos clásicos elaborados con maestría y los ingredientes más frescos y selectos. Sumérgete en un ambiente íntimo y refinado, perfecto para una velada inolvidable.",
+          address: "Avenida Siempre Viva",
+          image:
+            "https://c4.wallpaperflare.com/wallpaper/803/265/309/sunset-ocean-coast-lights-lanterns-romantic-restaurant-luxury-abstract-photography-hd-art-wallpaper-preview.jpg",
+        },
+      ];
 
-    { name: "restaurante 2", description: "restaurante 2", address: "calle falsa 785", image: ""},
+      const searchinput = document.getElementById("searchinput");
+      const resultscontainer = document.getElementById("results");
 
-    { name: "restaurante 3", description: "restaurante 3", address: "calle mexico 25", image: ""} 
+      searchinput.addEventListener("input", () => {
+        const query = searchinput.value.toLowerCase();
+        resultscontainer.innerHTML = "";
 
-  ];
-
-const searchinput = document.getElementById('searchinput');
-const resultscontainer = document.getElementById('results');
-
-searchinput.addEventListener('input', () => {
-  const query = searchinput.value.toLowerCase();
-  resultscontainer.innerHTML = '';
-
-  restaurants
-  .filter(restaurant => restaurant.name.toLowerCase().includes(query))
-  .forEach(restaurant => {
-    resultscontainer.innerHTML += `<div class="bg-white rounded-lg shadow-md overflow-hidden">
-<img src="${restaurant.image}" alt="${restaurant.name}" class="w-full h-48 object-cover">
-<div class="p-4">
-  <h3 class="text-xl font-bold mb-2">${restaurant.name}</h3>
-  <p class="text-gray-600 mb-2">${restaurant.description}</p>
-  <p class="text-gray-700"><strong>direccion:</strong> ${restaurant.address}</p>
-  </div>
-  </div>`
-  
-  })
-})
-
-</script>
+        restaurants
+          .filter((restaurant) => restaurant.name.toLowerCase().includes(query))
+          .forEach((restaurant) => {
+            resultscontainer.innerHTML += `<div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <img src="${restaurant.image}" alt="${restaurant.name}" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h3 class="text-xl font-bold mb-2">${restaurant.name}</h3>
+              <p class="text-gray-600 mb-2">${restaurant.description}</p>
+              <p class="text-gray-700"><strong>Dirección:</strong> ${restaurant.address}</p>
+              </div>
+            </div>`;
+          });
+      });
+    </script>
   </body>
 </html>
