@@ -1,51 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>New Restaurant</title>
-    </head>
-    <body class="bg-gray-100 font-sans">
-
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Restaurant</title>
+  </head>
+  <body class="bg-gray-100 font-sans">
     <!--Navbar-->
     <nav class="bg-gray-900 text-white p-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold">Restaurants Directories</h1>
-            <div class="space-x-4">
-                <a href="home.html" class="hover:text-ble-300">Home</a>
-                <a href="searchc.html" class="hover:text-blue-300">Search</a>
-                <a href="new-restaurant.html" class="hover:text-blue-300">New</a>
-            </div>
+      <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-bold">Restaurants Directories</h1>
+        <div class="space-x-4">
+          <a href="home.html" class="hover:text-ble-300">Home</a>
+          <a href="searchc.html" class="hover:text-blue-300">Search</a>
+          <a href="new-restaurant.html" class="hover:text-blue-300">New</a>
         </div>
+      </div>
     </nav>
 
     <!--Contenido Principal-->
     <div class="container mx-auto p-4">
-        <h2 class="text-3xl font-bold text-center mb-6">Agregar Nuevo Restaurante</h2>
-        <form class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
-            <div class="mb-4">
-                <label for="name" class="block text-gray-700 font-bold mb-2">Nombre</label>
-                <input type="text" id="name" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-blue-500"> 
-            </div>
-            <div class="mb-4">
-                <label for="description" class="block text-gray-700 font-bold mb-2">Descripción</label>
-                <textarea id="description" rows= "4" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-blue-500"></textarea>
-            </div>
-            <div class="mb-4">
-                <label for="address" class="block text-gray-700 font-bold mb-2">Dirección</label>
-                <input type="text" id="address" class="w-full p-3 border border-gray-300 rounded-lg focus: outline-none focus:ring-2 focus:ring-blue-500">
-            </div>
-            <div class="mb-4">
-                <label for="image" class="block text-gray-700 font-bold mb-2">URL de la Imagen</label>
-                <input type="url" id="image" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-            </div>
-            <button type="submit" class="w-full bg-green-700 text-white py-3 rounded-lg hover:bg-gray-900 transition-300">Guardar Restaurante</button>
-        </form>
-    </div>  
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    
+      <h2 class="text-3xl font-bold text-center mb-6">
+        Agregar Nuevo Restaurante
+      </h2>
+      <form class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
+        <div class="mb-4">
+          <label for="name" class="block text-gray-700 font-bold mb-2"
+            >Nombre</label
+          >
+          <input
+            type="text"
+            id="name"
+            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-blue-500"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="description" class="block text-gray-700 font-bold mb-2"
+            >Descripción</label
+          >
+          <textarea
+            id="description"
+            rows="4"
+            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-blue-500"
+          ></textarea>
+        </div>
+        <div class="mb-4">
+          <label for="address" class="block text-gray-700 font-bold mb-2"
+            >Dirección</label
+          >
+          <input
+            type="text"
+            id="address"
+            class="w-full p-3 border border-gray-300 rounded-lg focus: outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="image" class="block text-gray-700 font-bold mb-2"
+            >URL de la Imagen</label
+          >
+          <input
+            type="url"
+            id="image"
+            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+        <button
+          type="submit"
+          class="w-full bg-green-700 text-white py-3 rounded-lg hover:bg-gray-900 transition-300"
+        >
+          Guardar Restaurante
+        </button>
+      </form>
+    </div>
 
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- <script src="/js/index.js"></script> -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.querySelector("form");
+
+        const defaultRestaurants = [
+          {
+            name: "Nobile Cucina",
+            description:
+              "Embárcate en un viaje culinario al corazón de Italia sin salir de la ciudad. Disfruta de nuestros sabores auténticos, desde pastas frescas hechas en casa hasta recetas tradicionales transmitidas por generaciones. Vive una experiencia acogedora y llena de pasión en cada plato, acompañada de una selecta carta de vinos.",
+            address: "Calle Falsa 1260",
+            image:
+              "https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg",
+          },
+          {
+            name: "Ancestral: Sabor de Origen",
+            description:
+              "Siente el abrazo de la tradición colombiana en cada bocado que servimos. Te ofrecemos lo mejor de la comida criolla, preparada con ingredientes locales frescos y el auténtico sazón casero de la abuela. Ven y comparte en un ambiente cálido y familiar el verdadero sabor de nuestro país.",
+            address: "Calle de la Buena Mesa",
+            image:
+              "https://w0.peakpx.com/wallpaper/1019/191/HD-wallpaper-restaurant-and-bar-with-gorgeous-view-city-restaurant-view-bar-thumbnail.jpg",
+          },
+          {
+            name: "Fleur de Lys",
+            description:
+              "Descubre la elegancia y sofisticación de la alta cocina francesa en nuestro rincón parisino. Deléitate con platos clásicos elaborados con maestría y los ingredientes más frescos y selectos. Sumérgete en un ambiente íntimo y refinado, perfecto para una velada inolvidable.",
+            address: "Avenida Siempre Viva",
+            image:
+              "https://c4.wallpaperflare.com/wallpaper/803/265/309/sunset-ocean-coast-lights-lanterns-romantic-restaurant-luxury-abstract-photography-hd-art-wallpaper-preview.jpg",
+          },
+        ];
+
+        if (!localStorage.getItem("restaurants")) {
+          localStorage.setItem(
+            "restaurants",
+            JSON.stringify(defaultRestaurants)
+          );
+        }
+
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          const name = document.getElementById("name").value.trim();
+          const description = document
+            .getElementById("description")
+            .value.trim();
+          const address = document.getElementById("address").value.trim();
+          const image = document.getElementById("image").value.trim();
+
+          if (name && description && address && image) {
+            const newRestaurant = { name, description, address, image };
+            const restaurants =
+              JSON.parse(localStorage.getItem("restaurants")) || [];
+            restaurants.push(newRestaurant);
+            localStorage.setItem("restaurants", JSON.stringify(restaurants));
+
+            alert("¡Restaurante guardado exitosamente!");
+            form.reset();
+          } else {
+            alert("Por favor completa todos los campos.");
+          }
+        });
+      });
+    </script>
+  </body>
 </html>

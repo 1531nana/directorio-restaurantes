@@ -90,5 +90,37 @@
         </div>
       </div>
     </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const savedRestaurants = JSON.parse(localStorage.getItem("restaurants"));
+    
+        if (Array.isArray(savedRestaurants) && savedRestaurants.length > 0) {
+          const container = document.querySelector(".grid");
+          container.innerHTML = "";
+    
+          savedRestaurants.forEach((restaurant) => {
+            const card = document.createElement("div");
+            card.className = "bg-white rounded-lg shadow-md overflow-hidden";
+            card.innerHTML = `
+              <img
+                alt="${restaurant.name}"
+                class="w-full h48 object-cover"
+                src="${restaurant.image}"
+              />
+              <div class="p-4">
+                <h3 class="text-xl font-bold mb-2">${restaurant.name}</h3>
+                <p class="text-gray-600 mb-2">${restaurant.description}</p>
+                <p class="text-gray-700">
+                  <strong>Dirección</strong> ${restaurant.address}
+                </p>
+              </div>
+            `;
+            container.appendChild(card);
+          });
+        }
+      });
+    </script>
+    
   </body>
 </html>
