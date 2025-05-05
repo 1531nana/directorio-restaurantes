@@ -7,6 +7,60 @@
     <link href="css/style.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body>
+  <body class="bg-gray-100 font-sans">
+    <!-- Navbar -->
+     <nav class="bg-gray-900 text-white p-4">
+      <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-bold">directorio de restaurantes</h1>
+        <div class="space-x-4">
+          <a href="" class="hover:text-blue-300">home</a>
+          <a href="" class="hover:text-blue-300">search</a>
+          <a href="" class="hover:text-blue-300">new</a>
+        </div>
+      </div>
+     </nav>
+
+<div class="container mx-auto p-4">
+  <h2 class="text-3xl font-bold text-center mb-6">buscar restaurantes</h2>
+  <div class="flex justify-center mb-6">
+    <input type="text" id="searchinput" placeholder="buscar por nombre..." class="w-full md:w-1/2 P-3 border
+    border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+  </div>
+  <div id="results" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols3 gap-6"></div>
+</div>
+
+<script>
+  const restaurants = [
+    { name: "restaurante 1", description: "restaurante 1", address: "calle nueva 123", image: ""},
+
+    { name: "restaurante 2", description: "restaurante 2", address: "calle falsa 785", image: ""},
+
+    { name: "restaurante 3", description: "restaurante 3", address: "calle mexico 25", image: ""} 
+
+  ];
+
+const searchinput = document.getElementById('searchinput');
+const resultscontainer = document.getElementById('results');
+
+searchinput.addEventListener('input', () => {
+  const query = searchinput.value.toLowerCase();
+  resultscontainer.innerHTML = '';
+
+  restaurants
+  .filter(restaurant => restaurant.name.toLowerCase().includes(query))
+  .forEach(restaurant => {
+    resultscontainer.innerHTML += `<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<img src="${restaurant.image}" alt="${restaurant.name}" class="w-full h-48 object-cover">
+<div class="p-4">
+  <h3 class="text-xl font-bold mb-2">${restaurant.name}</h3>
+  <p class="text-gray-600 mb-2">${restaurant.description}</p>
+  <p class="text-gray-700"><strong>direccion:</strong> ${restaurant.address}</p>
+  </div>
+  </div>`
+  
+  })
+})
+
+</script>
   </body>
 </html>
