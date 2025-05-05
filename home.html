@@ -1,5 +1,10 @@
+<!-- Trabajo realizado por:
+  Luz Adriana Giraldo Gomez
+  Ginna Katherine Diaz Rosales
+  Juan Sebastian Restrepo Zuluaga
+  Jaime Alberto Espinosa Jaramillo-->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <title></title>
     <meta charset="UTF-8" />
@@ -7,6 +12,83 @@
     <link href="css/style.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body>
+  <body class="bg-gray-100 font-sans">
+    <nav class="bg-gray-900 text-white p-4">
+      <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-bold">Directorio de Restaurantes</h1>
+        <div class="space-x-4">
+          <a href="home.html" class="hover:tex-blue-300">Home</a>
+          <a href="search.html" class="hover:tex-blue-300">Search</a>
+          <a href="new.html" class="hover:tex-blue-300">New</a>
+        </div>
+      </div>
+    </nav>
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-6">
+        Restaurantes Disponibles
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <img
+            alt="Restaurante 1"
+            class="w-full h48 object-cover"
+              src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg"
+            />
+          <div class="p-4">
+            <h3 class="text-xl font-bold mb-2">Nobile Cucina</h3>
+            <p class="text-gray-600 mb-2">
+              Embárcate en un viaje culinario al corazón de Italia sin salir de la
+              ciudad. Disfruta de nuestros sabores auténticos, desde pastas
+              frescas hechas en casa hasta recetas tradicionales transmitidas por
+              generaciones. Vive una experiencia acogedora y llena de pasión en
+              cada plato, acompañada de una selecta carta de vinos.
+            </p>
+            <p class="text-gray-700">
+              <strong>Dirección</strong> Calle Falsa 1260
+            </p>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <img
+            alt="Restaurante 2"
+            class="w-full h48 object-cover"
+            src="https://w0.peakpx.com/wallpaper/1019/191/HD-wallpaper-restaurant-and-bar-with-gorgeous-view-city-restaurant-view-bar-thumbnail.jpg"
+          />
+          <div class="p-4">
+            <h3 class="text-xl font-bold mb-2">Ancestral: Sabor de Origen</h3>
+            <p class="text-gray-600 mb-2">
+              Siente el abrazo de la tradición colombiana en cada bocado que
+              servimos. Te ofrecemos lo mejor de la comida criolla, preparada con
+              ingredientes locales frescos y el auténtico sazón casero de la
+              abuela. Ven y comparte en un ambiente cálido y familiar el verdadero
+              sabor de nuestro país.
+            </p>
+            <p class="text-gray-700">
+              <strong>Dirección</strong> Calle de la Buena Mesa
+            </p>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <img
+            alt="Restaurante 3"
+            class="w-full h48 object-cover"
+            src="https://c4.wallpaperflare.com/wallpaper/803/265/309/sunset-ocean-coast-lights-lanterns-romantic-restaurant-luxury-abstract-photography-hd-art-wallpaper-preview.jpg"
+          />
+
+          <div class="p-4">
+            <h3 class="text-xl font-bold mb-2">Fleur de Lys</h3>
+            <p class="text-gray-600 mb-2">
+              Descubre la elegancia y sofisticación de la alta cocina francesa en
+              nuestro rincón parisino. Deléitate con platos clásicos elaborados
+              con maestría y los ingredientes más frescos y selectos. Sumérgete en
+              un ambiente íntimo y refinado, perfecto para una velada inolvidable.
+            </p>
+            <p class="text-gray-700">
+              <strong>Dirección</strong> Avenida Siempre Viva
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
